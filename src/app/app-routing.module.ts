@@ -26,15 +26,16 @@ const routes: Routes = [
     path: "admin",
     component: AdminComponent,
     children: [
-      { path: "dashboard", component: DashboardComponent },
-      { path: "settings", component: SettingsComponent },
-      { path: "tables", component: TablesComponent },
-      { path: "maps", component: MapsComponent },
-      { path: "", redirectTo: "dashboard", pathMatch: "full" },
+     // { path: "dashboard", component: DashboardComponent },
+      //{ path: "settings", component: SettingsComponent },
+     // { path: "tables", component: TablesComponent },
+      //{ path: "maps", component: MapsComponent },     
+      { path: "project", loadChildren: () => import('src/app/main/chat-bar/chat-bar.module').then(m => m.ChatBarModule),},
+      { path: "", redirectTo: "admin/project", pathMatch: "full" },
     ],
   },
   // auth views
-  {
+  /* {
     path: "auth",
     component: AuthComponent,
     children: [
@@ -42,12 +43,13 @@ const routes: Routes = [
       { path: "register", component: RegisterComponent },
       { path: "", redirectTo: "login", pathMatch: "full" },
     ],
-  },
+  }, */
   // no layout views
-  { path: "profile", component: ProfileComponent },
+  /* { path: "profile", component: ProfileComponent },
   { path: "landing", component: LandingComponent },
   { path: "", component: IndexComponent },
-  { path: "**", redirectTo: "", pathMatch: "full" },
+  { path: "**", redirectTo: "", pathMatch: "full" }, */
+
 ];
 
 @NgModule({
