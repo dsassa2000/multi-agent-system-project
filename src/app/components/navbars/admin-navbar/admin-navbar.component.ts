@@ -14,7 +14,6 @@ export class AdminNavbarComponent implements OnInit {
   ngOnInit(): void {}
 
   onSearch(event : any){
-   console.log(event.target.value);
    this.searchQuery = event.target.value;
    let data = {
     question : this.searchQuery
@@ -28,6 +27,7 @@ export class AdminNavbarComponent implements OnInit {
       }
 
     });
+    this._chatBarService.emitQuestion(this.searchQuery);
    }
   }
 }
