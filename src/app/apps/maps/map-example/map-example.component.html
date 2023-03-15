@@ -1,4 +1,14 @@
-<div
-  class="relative w-full rounded h-600-px">
-  {{searchResults}}
+<div class="flex relative w-full rounded h-600-px">
+  <div class="flex-auto p-4">
+    <div class="flex flex-wrap" *ngIf="!loading">
+      <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+        <span class="font-semibold text-xl text-blueGray-700">
+          {{searchResults}}
+        </span>
+      </div>
+    </div>
+    <div class="flex justify-center items-center h-full" *ngIf="loading">
+      <img class="h-16 w-16" src="https://icons8.com/preloaders/preloaders/1488/Iphone-spinner-2.gif" alt="">
+    </div>
+  </div>
 </div>
