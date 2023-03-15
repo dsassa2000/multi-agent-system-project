@@ -92,9 +92,9 @@ import { HttpClientModule } from "@angular/common/http";
   imports: [
     BrowserModule, 
     AppRoutingModule,
-  ReactiveFormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [ChatBarService],
   bootstrap: [AppComponent],
