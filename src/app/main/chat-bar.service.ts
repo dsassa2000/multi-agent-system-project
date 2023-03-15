@@ -12,6 +12,7 @@ export class ChatBarService {
   // Private parameters
   private _url: string;
   emitSubject : BehaviorSubject<any | null> = new BehaviorSubject(null);
+  emitSubjectquestion: BehaviorSubject<any | null> = new BehaviorSubject(null);
   /**
      * Constructor
      *
@@ -27,5 +28,8 @@ export class ChatBarService {
   }
   emitObject(data){
     this.emitSubject.next(data);
+  }
+  emitQuestion(data){
+    this.emitSubjectquestion.next(data);
   }
 }
