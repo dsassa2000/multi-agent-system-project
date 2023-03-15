@@ -21,6 +21,7 @@ import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 
 const routes: Routes = [
+  {path: "", pathMatch : 'full', redirectTo: 'admin/project'},
   // admin views
   {
     path: "admin",
@@ -31,7 +32,6 @@ const routes: Routes = [
      // { path: "tables", component: TablesComponent },
       //{ path: "maps", component: MapsComponent },     
       { path: "project", loadChildren: () => import('src/app/main/chat-bar/chat-bar.module').then(m => m.ChatBarModule),},
-      { path: "", redirectTo: "admin/project", pathMatch: "full" },
     ],
   },
   // auth views
